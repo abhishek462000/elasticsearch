@@ -1,0 +1,17 @@
+{
+  // This query combines must should and filter
+  "query": {
+    "bool": {
+      "must": [
+        { "match": { "title": "Elasticsearch" }}
+      ],
+      "should": [
+        { "match": { "author": "John Doe" }},
+        { "match": { "author": "Jane Doe" }}
+      ],
+      "filter": [
+        { "range": { "price": { "lte": 50 }}}
+      ]
+    }
+  }
+}
